@@ -1,0 +1,6 @@
+@font-face {
+    font-family: DTM-Sans;
+    src: url('DTM-Sans.otf');
+}
+body {
+display:flex;justify-content:center;align-items:center;font-family: 'DTM-Sans';font-size:200%;color:#FFFFFF}
