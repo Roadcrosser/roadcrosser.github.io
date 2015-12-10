@@ -7,6 +7,10 @@ body {
 }
 
 #aaa {
+	margin-left:auto;
+	margin-right:auto;
+	justify-content: center;
+	align-items:center;
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
