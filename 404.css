@@ -1,0 +1,18 @@
+@font-face {
+    font-family: DTM-Sans;
+    src: url('howdy/DTM-Sans.otf');
+}
+body {
+	background-color:#000000;
+}
+
+#aaa {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-family: 'DTM-Sans';
+	font-size: 500%;
+	color: #FFFFFF
+}
