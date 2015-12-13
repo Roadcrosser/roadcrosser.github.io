@@ -1,6 +1,6 @@
-@font-face {
-    font-family: DTM-Sans;
-    src: url('howdy/DTM-Sans.otf');
+@fon-face {
+    font-family: 8bitoperator JVE;
+    src: url(howdy/8bitoperator_jve.ttf);
 }
 body {
 	background-color:#000000;
@@ -24,7 +24,7 @@ body {
 	width: 100%;
 }
 #child {
-	font-family: 'DTM-Sans';
-	font-size: 500%;
+	font-family: '8bitoperator JVE';
+	font-size: 600%;
 	color: #FFFFFF
 }
