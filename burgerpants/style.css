@@ -1,0 +1,12 @@
+body {
+	background: url('http://i.imgur.com/FVnPZON.gif') no-repeat fixed;
+				-webkit-background-size: contain;
+				-moz-background-size: contain;
+				-o-background-size: contain;
+				background-size: contain;
+				-webkit-background-position: center bottom;
+				-moz-background-position: center bottom;
+				-o-background-position: center bottom;
+				background-position: center bottom;
+	overflow: hidden;
+    }
