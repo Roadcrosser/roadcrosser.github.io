@@ -1,0 +1,12 @@
+body {
+	background: url('Potato.png') no-repeat fixed;
+				-webkit-background-size: contain;
+				-moz-background-size: contain;
+				-o-background-size: contain;
+				background-size: contain;
+				-webkit-background-position: center center;
+				-moz-background-position: center center;
+				-o-background-position: center center;
+				background-position: center center;
+	overflow: hidden;
+    }
