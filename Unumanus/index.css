@@ -21,6 +21,7 @@ body {
 	transform: translateY(-50%);
 	width: 100%;
 	font-size:200%;
+	clear:both;
 }
 
 a {
@@ -40,11 +41,10 @@ a:hover {
 	right: 0;
 }
 
-#aaa {
-	position:relative;
-    margin:0 auto;
-    clear:left;
-    height:auto;
-    z-index: 0;
-    text-align:center;
+#sub2 {
+	font-size:100%;
+	position:fixed;
+	bottom:5%;
+	width:100%;
+	text-align: center;
 }
