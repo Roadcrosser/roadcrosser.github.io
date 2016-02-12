@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.5.7
+Unumanus v1.5.7.2
 
 Note: If you see a big garble of characters above, you might want to ignore Step 2 and go to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -26,8 +26,8 @@ Note: If you see a big garble of characters above, you might want to ignore Step
 */
 Heats1 = Heats,Flames,Firey,Hot,Fire,Hots,Fires,Flame,Flamey,Heaty,Burning,Char,Charred,Charry,Burns,Burn,Blazes,Blaze,Blazing,Ember,Embers,Arson,Sparky,Sparks,Infernal,Inferno,Melt,Melts,Melty,Melting,Seary,Searing,Sear,Swelter,Sweltering,Thermal,Warm,Roast,Roasty,Combustion,Combustiony,Broil,Broils,Broily,Broiling,Boil,Boils,Boily,Boiling,Warms,Flaming,Heating,Warming,Roasting,Flameo,Toast,Toasts,Toasting,Toasty,Lava,Lavas,Magma,Magmas,Stars,Star,Starry,Grill,Grilly,Grilling,Steam,Steamy,Steamer,Steams,Redhot,Redhots,Spicy,Spice,Spicing,Fuming,Fumes,Blast,Blasts,Blasting,Blaster,Cinder,Cinders,Pyro,Sizzling,Sizzle,Sizzler,Sizzles
 Heats2 = man,guy,dude,face,head,waffle,bro,bud,bub,smith,runt,pip,ton,sir,ster,boy,ius,master,kid
-Orng1 = oingo boingo,orangudan,orangutan,orgnpuff,orngear,ngroae,egroan,doorhinge,norgergestan,ornge,ornage,orgne,organe,ograne,ongere,rangeo,oerange,oran berry,orange juice,oregano,orenge,oregon,oregona,oranga,orgene,oronge,ereonge,orngasdlfjsdghj,rngeoa,rnoarg,orngea,rongea,ornga,oregangeo,organge,daniel-range,ordan,orgean,orgaen,orgn,orangepuff,red-yellow,yellow-red,orangefruit
-Orng2 = clod,star,stare,stair,shtar,stra,strar,strer,sta,staro,stairs,Star,ster,stror,stah,steh,sror,sar,score,sert,ASSERT,scrim,sploot,suit,stress,sort,spit,ASSET,swood
+Orng1 = ronaeg,organ,oroongay,ongy boingy,egnaro,oarng,oingo boingo,orangudan,orangutan,orgnpuff,orngear,ngroae,egroan,doorhinge,norgergestan,ornge,ornage,orgne,organe,ograne,ongere,rangeo,oerange,oran berry,orange juice,oregano,orenge,oregon,oregona,oranga,orgene,oronge,ereonge,orngasdlfjsdghj,rngeoa,rnoarg,orngea,rongea,ornga,oregangeo,organge,daniel-range,ordan,orgean,orgaen,orgn,orangepuff,red-yellow,yellow-red,orangefruit
+Orng2 = nerd,clod,star,stare,stair,shtar,stra,strar,strer,sta,staro,stairs,Star,ster,stror,stah,steh,sror,sar,score,sert,ASSERT,scrim,sploot,suit,stress,sort,spit,ASSET,swood
 
 StringSplit HeatsArray1, Heats1, `,
 StringSplit HeatsArray2, Heats2, `,
@@ -41,13 +41,13 @@ Heats2 := HeatsArray1%Randnum%
 Random, Randnum,1,19 ; man
 Heats3 := HeatsArray2%Randnum%
 
-Random, Randnum,1,44 ; orange
+Random, Randnum,1,50 ; orange
 Orng1 := Orngarray1%Randnum%
 Random, Randnum, 1,20 ; chance to get suffix
 
 if Randnum = 1
 {
-  Random, Randnum,1,29 ; star
+  Random, Randnum,1,30 ; star
   Orng2 := Orngarray2%Randnum%
 }
 else
@@ -58,7 +58,7 @@ else
 Random, Randnum, 1,100 ; John Jacon Jingleheimer Schmidt, his name is my name too.
 if Randnum = 1
 {
-  Orng1 = John Jacob Jingleorange Schmidt
+  Orng1 = John Jacob Orangeheimer Schmidt
   Orng2 =
 }
 return
