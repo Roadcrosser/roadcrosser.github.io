@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.6.4.4
+Unumanus v1.6.5
 
 Note: If you see a big garble of characters above, you might want to ignore Step 2 and go to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -66,12 +66,31 @@ if Randnum = 1
 }
 return
 
+Random, Randnum, 1,20 ; Georangeo Starmani is a good name. (I might add a special name feature in the future)
+if Randnum = 1
+{
+  Orng1 = Georangeo Starmani
+  Orng2 =
+}
+return
+
 :*:<hf>::
+if GetKeyState("CapsLock", "T") = 1
+{
+  StringUpper, Heats1, Heats1
+  StringUpper, Heats2, Heats2
+  StringUpper, Heats3, Heats3
+}
 Send %Heats1% %Heats2%%Heats3%
 reload
 return
 
 :*:<oj>::
+if GetKeyState("CapsLock", "T") = 1
+{
+  StringUpper, Orng1, Orng1
+  StringUpper, Orng2, Orng2
+}
 Send %Orng1%%Orng2%
 reload
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
@@ -592,7 +611,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.6.4"
+	, Version_Number := "1.6.5"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
@@ -622,7 +641,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 
 		If (Version > Version_Number){
 			If (_SuppressMsgBox != 1 and _SuppressMsgBox != 3){
-				MsgBox,0x4,Unumanus Update!,Hey look, I updated %Script_Name%!.`nChangelog: http://roadcrosser.xyz/Unumanus/changelog``nCurrent version: %Version_Number%`nNew version: %Version%`n`nYou should, like, download it now.
+				MsgBox,0x4,Unumanus Update!,Hey look, I updated %Script_Name%!`nChangelog: http://roadcrosser.xyz/Unumanus/changelog`nCurrent version: %Version_Number%`nNew version: %Version%`n`nYou should, like, download it now.
 
 				IfMsgBox,Yes
 					MsgBox_Result := 1
