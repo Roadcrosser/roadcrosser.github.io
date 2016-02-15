@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.5.8
+Unumanus v1.5.9
 
 Note: If you see a big garble of characters above, you might want to ignore Step 2 and go to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -402,9 +402,15 @@ SendEvent {U+2265}
 }
 return
 
-:*:<oo>::
+:*:<oo>:: ; ∞
 {
 SendEvent {U+221E}
+}
+return
+
+:*:<zw>:: ; ​
+{
+SendEvent {U+200B}
 }
 return
 
