@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.6.4
+Unumanus v1.6.4.4
 
 Note: If you see a big garble of characters above, you might want to ignore Step 2 and go to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -29,8 +29,8 @@ Check_ForUpdate() ; This line initiates an update check, if you don't want to up
 */
 Heats1 = Heats,Flames,Firey,Hot,Fire,Hots,Fires,Flame,Flamey,Heaty,Burning,Char,Charred,Charry,Burns,Burn,Blazes,Blaze,Blazing,Ember,Embers,Arson,Sparky,Sparks,Infernal,Inferno,Melt,Melts,Melty,Melting,Seary,Searing,Sear,Swelter,Sweltering,Thermal,Warm,Roast,Roasty,Combustion,Combustiony,Broil,Broils,Broily,Broiling,Boil,Boils,Boily,Boiling,Warms,Flaming,Heating,Warming,Roasting,Flameo,Toast,Toasts,Toasting,Toasty,Lava,Lavas,Magma,Magmas,Stars,Star,Starry,Grill,Grilly,Grilling,Steam,Steamy,Steamer,Steams,Redhot,Redhots,Spicy,Spice,Spicing,Fuming,Fumes,Blast,Blasts,Blasting,Blaster,Cinder,Cinders,Pyro,Sizzling,Sizzle,Sizzler,Sizzles
 Heats2 = man,guy,dude,face,head,waffle,bro,bud,bub,smith,runt,pip,ton,sir,ster,boy,ius,master,kid
-Orng1 = orgate,norgate,ogre,ogle,ronaeg,organ,oroongay,oingy boingy,egnaro,oarng,oingo boingo,orangudan,orangutan,orgnpuff,orngear,ngroae,egroan,doorhinge,norgergestan,ornge,ornage,orgne,organe,ograne,ongere,rangeo,oerange,oran berry,orange juice,oregano,orenge,oregon,oregona,oranga,orgene,oronge,ereonge,orngasdlfjsdghj,rngeoa,rnoarg,orngea,rongea,ornga,oregangeo,organge,daniel-range,ordan,orgean,orgaen,orgn,orangepuff,red-yellow,yellow-red,orangefruit
-Orng2 = stem,spear,shed,nerd,clod,star,stare,stair,shtar,stra,strar,strer,sta,staro,stairs,Star,ster,stror,stah,steh,sror,sar,score,sert,ASSERT,scrim,sploot,suit,stress,sort,spit,ASSET,swood
+Orng1 = orange,orgate,norgate,ogre,ogle,ronaeg,organ,oroongay,oingy boingy,egnaro,oarng,oingo boingo,orangudan,orangutan,orgnpuff,orngear,ngroae,egroan,doorhinge,norgerge,ornge,ornage,orgne,organe,ograne,ongere,rangeo,oerange,oran berry,,oregano,orenge,oregon,oregona,oranga,orgene,oronge,ereonge,orngasdlfjsdghj,rngeoa,rnoarg,orngea,rongea,ornga,oregangeo,organge,daniel-range,ordan,orgean,orgaen,orgn,red-yellow,yellow-red
+Orng2 = stem,spear,shed,nerd,clod,star,stare,stair,shtar,stra,strar,strer,sta,staro,stairs,Star,ster,stror,stah,steh,sror,sar,score,sert,ASSERT,scrim,sploot,suit,stress,sort,spit,ASSET,swood,stan,juice,puff
 
 StringSplit HeatsArray1, Heats1, `,
 StringSplit HeatsArray2, Heats2, `,
@@ -107,44 +107,10 @@ Return
 ║ TEXT REPLACEMENT ║
 ╚══════════════════╝
 */
-/*
-;Temp setup stuff
-!a::
-{
-SendEvent {{}^v
-}
-return
 
-!s::
-{
-SendEvent {{}
-}
-return
-
-!d::
-{
-SendEvent {}}
-}
-return
-
-!f::
-{
-SendEvent :*:<>::{Enter}{{}{Enter}SendEvent{Space}{Enter}{Right}{Enter}return
-}
-return
-
-!r::
-{
-SendEvent ^s
-Reload
-}
-return
-*/
-
-;—————————————————————————————————————————————————————————————————————————————————————————————————
 ;Texty stuff for text
-::teh::the
-::adn::and
+:?0:teh::the
+:?0:adn::and
 ::@@::@gmail.com
 
 ;Kaomoji
@@ -656,7 +622,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 
 		If (Version > Version_Number){
 			If (_SuppressMsgBox != 1 and _SuppressMsgBox != 3){
-				MsgBox,0x4,New version available,There is a new version of %Script_Name% available.`nCurrent version: %Version_Number%`nNew version: %Version%`n`nWould you like to download it now?
+				MsgBox,0x4,Unumanus Update!,Hey look, I updated %Script_Name%!.`nChangelog: http://roadcrosser.xyz/Unumanus/changelog``nCurrent version: %Version_Number%`nNew version: %Version%`n`nYou should, like, download it now.
 
 				IfMsgBox,Yes
 					MsgBox_Result := 1
