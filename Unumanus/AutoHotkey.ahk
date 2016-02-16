@@ -5,9 +5,9 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.6.5
+Unumanus v1.7
 
-Note: If you see a big garble of characters above, you might want to ignore Step 2 and go to http://roadcrosser.xyz/Unumanus to get this file instead.
+Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
 
  Install instructions:
@@ -27,15 +27,15 @@ Check_ForUpdate() ; This line initiates an update check, if you don't want to up
 ║   RANDOMIZERS    ║
 ╚══════════════════╝
 */
-Heats1 = Heats,Flames,Firey,Hot,Fire,Hots,Fires,Flame,Flamey,Heaty,Burning,Char,Charred,Charry,Burns,Burn,Blazes,Blaze,Blazing,Ember,Embers,Arson,Sparky,Sparks,Infernal,Inferno,Melt,Melts,Melty,Melting,Seary,Searing,Sear,Swelter,Sweltering,Thermal,Warm,Roast,Roasty,Combustion,Combustiony,Broil,Broils,Broily,Broiling,Boil,Boils,Boily,Boiling,Warms,Flaming,Heating,Warming,Roasting,Flameo,Toast,Toasts,Toasting,Toasty,Lava,Lavas,Magma,Magmas,Stars,Star,Starry,Grill,Grilly,Grilling,Steam,Steamy,Steamer,Steams,Redhot,Redhots,Spicy,Spice,Spicing,Fuming,Fumes,Blast,Blasts,Blasting,Blaster,Cinder,Cinders,Pyro,Sizzling,Sizzle,Sizzler,Sizzles
-Heats2 = man,guy,dude,face,head,waffle,bro,bud,bub,smith,runt,pip,ton,sir,ster,boy,ius,master,kid
-Orng1 = orange,orgate,norgate,ogre,ogle,ronaeg,organ,oroongay,oingy boingy,egnaro,oarng,oingo boingo,orangudan,orangutan,orgnpuff,orngear,ngroae,egroan,doorhinge,norgerge,ornge,ornage,orgne,organe,ograne,ongere,rangeo,oerange,oran berry,,oregano,orenge,oregon,oregona,oranga,orgene,oronge,ereonge,orngasdlfjsdghj,rngeoa,rnoarg,orngea,rongea,ornga,oregangeo,organge,daniel-range,ordan,orgean,orgaen,orgn,red-yellow,yellow-red
-Orng2 = stem,spear,shed,nerd,clod,star,stare,stair,shtar,stra,strar,strer,sta,staro,stairs,Star,ster,stror,stah,steh,sror,sar,score,sert,ASSERT,scrim,sploot,suit,stress,sort,spit,ASSET,swood,stan,juice,puff
+Heats1 = Wang Fire~|That guy whose name I cant remember~|That guy whose name I forgot~|Firey Whatsisface~|That guy who's made of fire, you know the one.~|Mr. Burns~|Steve~|Red Hot Chibi Pepper~|Mr. Hotpants McGee~|SO EASILY DEFEATED~|Grillby~|Mr. Explosion~|Burnie Cinders~|Jack Frost~|Heats|Flames|Firey|Hot|Fire|Hots|Fires|Flame|Flamey|Heaty|Burning|Char|Charred|Charry|Burns|Burn|Blazes|Blaze|Blazing|Ember|Embers|Arson|Sparky|Sparks|Infernal|Inferno|Melt|Melts|Melty|Melting|Seary|Searing|Sear|Swelter|Sweltering|Thermal|Warm|Roast|Roasty|Combustion|Combustiony|Broil|Broils|Broily|Broiling|Boil|Boils|Boily|Boiling|Warms|Flaming|Heating|Warming|Roasting|Flameo|Toast|Toasts|Toasting|Toasty|Lava|Lavas|Magma|Magmas|Stars|Star|Starry|Grill|Grilly|Grilling|Steam|Steamy|Steamer|Steams|Redhot|Redhots|Spicy|Spice|Spicing|Fuming|Fumes|Blast|Blasts|Blasting|Blaster|Cinder|Cinders|Pyro|Sizzling|Sizzle|Sizzler|Sizzles
+Heats2 = man|guy|dude|face|head|waffle|bro|bud|bub|smith|runt|pip|ton|sir|ster|boy|ius|master|kid
+Orng1 = Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|Matt Groerange|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|orbit|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
+Orng2 = stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|Star|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|suit|stress|sort|spit|ASSET|swood|stan|juice|puff-chan|-san|-kun|-sama|-sensei
 
-StringSplit HeatsArray1, Heats1, `,
-StringSplit HeatsArray2, Heats2, `,
-StringSplit Orngarray1, Orng1, `,
-StringSplit Orngarray2, Orng2, `,
+StringSplit HeatsArray1, Heats1, |
+StringSplit HeatsArray2, Heats2, |
+StringSplit Orngarray1, Orng1, |
+StringSplit Orngarray2, Orng2, |
 
 Random, Randnum,1,% HeatsArray10 ; Heats
 Heats1 := HeatsArray1%Randnum%
@@ -43,6 +43,21 @@ Random, Randnum,1,% HeatsArray10 ; Flames
 Heats2 := HeatsArray1%Randnum%
 Random, Randnum,1,% HeatsArray20 ; man
 Heats3 := HeatsArray2%Randnum%
+Heats4 := " " ; The letter space, the final frontier.
+
+if Instr(Heats1, "~") > 0
+{
+  StringTrimRight, Heats1, Heats1, 1
+  Heats2 =
+  Heats3 =
+  Heats4 =
+}
+
+if Instr(Heats2, "~") > 0
+{
+  Random, Randnum,1,% HeatsArray10 ; Flames reroll
+  Heats2 := HeatsArray1%Randnum%
+}
 
 Random, Randnum,1,% Orngarray10 ; orange
 Orng1 := Orngarray1%Randnum%
@@ -58,19 +73,17 @@ else
   Orng2 =
 }
 
-Random, Randnum, 1,100 ; John Jacob Jingleheimer Schmidt, his name is my name too.
-if Randnum = 1
+if Instr(Orng1, "~") > 0 ; Special Names that don't need no star
 {
-  Orng1 = John Jacob Orangeheimer Schmidt
+  StringTrimRight, Orng1, Orng1, 1
   Orng2 =
 }
 return
 
-Random, Randnum, 1,20 ; Georangeo Starmani is a good name. (I might add a special name feature in the future)
-if Randnum = 1
+if Instr(Orng1, "+") > 0 ; Special Names that depend on the star for it's success
 {
-  Orng1 = Georangeo Starmani
-  Orng2 =
+  StringTrimRight, Orng1, Orng1, 1
+  Orng2 := Orngarray2%Randnum%
 }
 return
 
@@ -81,7 +94,7 @@ if GetKeyState("CapsLock", "T") = 1
   StringUpper, Heats2, Heats2
   StringUpper, Heats3, Heats3
 }
-Send %Heats1% %Heats2%%Heats3%
+Send %Heats1%%Heats4%%Heats2%%Heats3%
 reload
 return
 
@@ -93,6 +106,7 @@ if GetKeyState("CapsLock", "T") = 1
 }
 Send %Orng1%%Orng2%
 reload
+return
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 
 /*
@@ -611,7 +625,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.6.5"
+	, Version_Number := "1.7"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
