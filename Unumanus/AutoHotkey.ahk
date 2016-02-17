@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.7.2
+Unumanus v.1.7.2.1
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -53,7 +53,7 @@ if Instr(Heats1, "~") > 0
   Heats4 =
 }
 
-Random, Randnum,13,14 ;% Orngarray10 ; orange
+Random, Randnum,1,% Orngarray10 ; orange
 Orng1 := Orngarray1%Randnum%
 Random, Randnum, 1,5 ; chance to get suffix
 
@@ -619,7 +619,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7.2"
+	, Version_Number := "1.7.2.1"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
