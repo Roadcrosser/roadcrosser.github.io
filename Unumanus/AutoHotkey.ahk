@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v1.7
+Unumanus v1.7.1
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -30,7 +30,7 @@ Check_ForUpdate() ; This line initiates an update check, if you don't want to up
 Heats1 = Wang Fire~|That guy whose name I cant remember~|That guy whose name I forgot~|Firey Whatsisface~|That guy who's made of fire, you know the one.~|Mr. Burns~|Steve~|Red Hot Chibi Pepper~|Mr. Hotpants McGee~|SO EASILY DEFEATED~|Grillby~|Mr. Explosion~|Burnie Cinders~|Jack Frost~|Heats|Flames|Firey|Hot|Fire|Hots|Fires|Flame|Flamey|Heaty|Burning|Char|Charred|Charry|Burns|Burn|Blazes|Blaze|Blazing|Ember|Embers|Arson|Sparky|Sparks|Infernal|Inferno|Melt|Melts|Melty|Melting|Seary|Searing|Sear|Swelter|Sweltering|Thermal|Warm|Roast|Roasty|Combustion|Combustiony|Broil|Broils|Broily|Broiling|Boil|Boils|Boily|Boiling|Warms|Flaming|Heating|Warming|Roasting|Flameo|Toast|Toasts|Toasting|Toasty|Lava|Lavas|Magma|Magmas|Stars|Star|Starry|Grill|Grilly|Grilling|Steam|Steamy|Steamer|Steams|Redhot|Redhots|Spicy|Spice|Spicing|Fuming|Fumes|Blast|Blasts|Blasting|Blaster|Cinder|Cinders|Pyro|Sizzling|Sizzle|Sizzler|Sizzles
 Heats2 = man|guy|dude|face|head|waffle|bro|bud|bub|smith|runt|pip|ton|sir|ster|boy|ius|master|kid
 Orng1 = Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|Matt Groerange|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|orbit|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
-Orng2 = stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|Star|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|suit|stress|sort|spit|ASSET|swood|stan|juice|puff-chan|-san|-kun|-sama|-sensei
+Orng2 = stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|star|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|suit|stress|sort|spit|ASSET|swood|stan|juice|puff-chan|-san|-kun|-sama|-sensei
 
 StringSplit HeatsArray1, Heats1, |
 StringSplit HeatsArray2, Heats2, |
@@ -39,7 +39,7 @@ StringSplit Orngarray2, Orng2, |
 
 Random, Randnum,1,% HeatsArray10 ; Heats
 Heats1 := HeatsArray1%Randnum%
-Random, Randnum,1,% HeatsArray10 ; Flames
+Random, Randnum,15,% HeatsArray10 ; Flames
 Heats2 := HeatsArray1%Randnum%
 Random, Randnum,1,% HeatsArray20 ; man
 Heats3 := HeatsArray2%Randnum%
@@ -51,12 +51,6 @@ if Instr(Heats1, "~") > 0
   Heats2 =
   Heats3 =
   Heats4 =
-}
-
-if Instr(Heats2, "~") > 0
-{
-  Random, Randnum,1,% HeatsArray10 ; Flames reroll
-  Heats2 := HeatsArray1%Randnum%
 }
 
 Random, Randnum,1,% Orngarray10 ; orange
@@ -625,7 +619,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7"
+	, Version_Number := "1.7.1"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
