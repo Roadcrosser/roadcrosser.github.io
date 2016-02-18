@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.1.7.5
+Unumanus v.1.7.6
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -150,8 +150,11 @@ Return
 :?0:adn::and
 ::@@::@gmail.com
 :*:<tokyo>::WHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAT
+:*:<binary>::01101000011101000111010001110000001110100010111100101111011100100110111101100001011001000110001101110010011011110111001101110011011001010111001000101110011110000111100101111010001011110111010001101001011011010110010100101111
+:*:<hex>::68 74 74 70 3a 2f 2f 72 6f 61 64 63 72 6f 73 73 65 72 2e 78 79 7a 2f 74 69 6d 65 2f
 :*:<script>::http://roadcrosser.xyz/Unumanus/
 :*:<changelog>::http://roadcrosser.xyz/Unumanus/changelog/
+:*:<troubleshoot>::http://roadcrosser.xyz/Unumanus/broke/
 
 ;Kaomoji
 
@@ -645,7 +648,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7.5"
+	, Version_Number := "1.7.6"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
