@@ -18,3 +18,32 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size:500%;
 }
+
+@keyframes seconds { to {transform:rotate(480deg)} }
+#watch .seconds-hand {
+  width:.2em;
+  height:14em;
+  border-radius:.1em .1em 0 0/10em 10em 0 0;
+  background:#EEEEEE;
+	opacity: .5;
+  position:absolute;
+  bottom:50%; left:50%;
+  margin:0 0 -2em -.1em;
+  transform-origin:0.1em 12em;
+  transform:rotate(120deg);
+  animation:seconds 60s steps(60, end) 0s infinite;
+	z-index:-1;
+}
+#watch .seconds-hand:after {
+  content:'';
+  width:1.4em;
+  height:1.4em;
+  border-radius:1em;
+  background:inherit;
+  position:absolute;
+  left:-.65em; bottom:1.35em;
+	z-index:-1;
+}
+@keyframes dsm {
+  to { transform:translateY(-120em) }
+}
