@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.1.7.7
+Unumanus v.1.7.8
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -222,14 +222,14 @@ SendEvent {(}{U+2014}{_}{U+2014}{)}
 }
 return
 
-:*:<wut>:: ; ఠ͟ಠ
+:*:<wut>:: ; ఠ͟ ಠ
 {
-SendEvent {U+0C20}{ }{U+035F}{U+0CA0}
+SendEvent {U+0C20}{U+035F}{U+0CA0}{Left}{Space}{Right}
 }
 return
 
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
-;Special characters I'll probable never use
+;Special characters I'll probably never use
 
 ::^1:: ; ¹
 {
@@ -547,12 +547,6 @@ SendEvent {U+0394}
 }
 return
 
-:*:<d>:: ; δ (I think???)
-{
-SendEvent {U+03B4}
-}
-return
-
 :*:<T>:: ; Θ
 {
 SendEvent {U+0398}
@@ -661,7 +655,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7.7"
+	, Version_Number := "1.7.8"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
