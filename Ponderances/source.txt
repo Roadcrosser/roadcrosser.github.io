@@ -1,0 +1,432 @@
+"Ponderances" by Roadcrosser
+
+Section 0 - Setup and stuff
+
+Release along with the source text.
+
+Include Basic Screen Effects by Emily Short
+
+Requesting for help is an action out of world.
+
+Report requesting for help: say "Because [italic type]Ponderances[roman type] is such a short game, game-specific help is not available. If you are, however, new to interactive fiction, a guide to get started can be found at [italic type]http://bit.ly/ifpostcard[line break]".
+
+Understand "help" and "hint" as requesting for help.
+
+When play begins:
+	display the boxed quotation 
+	"Ponderance (noun)
+	
+	Weight; Gravity; Consequence.";
+	show the current quotation;
+	wait for any key;
+	clear the screen.
+
+Release along with cover art and an interpreter.
+
+Use scoring.
+
+The prefer unabbreviated room descriptions rule is not listed in the carry out preferring unabbreviated room descriptions rulebook.
+The prefer sometimes abbreviated room descriptions rule is not listed in the carry out preferring sometimes abbreviated room descriptions rulebook.
+The prefer abbreviated room descriptions rule is not listed in the carry out preferring abbreviated room descriptions rulebook.
+The standard report preferring abbreviated room descriptions rule is not listed in the report preferring abbreviated room descriptions rulebook.
+The standard report preferring unabbreviated room descriptions rule is not listed in the report preferring unabbreviated room descriptions rulebook.
+The standard report preferring sometimes abbreviated room descriptions rule is not listed in the report preferring sometimes abbreviated room descriptions rulebook.
+Use full-length room descriptions.
+
+After printing the name of a container:
+	omit contents in listing.
+
+After printing the name of a supporter:
+	omit contents in listing.
+
+Instead of examining the player while the player is not in Quarters: say "Without a mirror, you can't get a good look at yourself[line break]".
+
+Rule for amusing a victorious player: say "Have you tried using the turbolift to go between decks?[line break]You can refer to the Communications Device as an iPhone.[line break]Potatoes have eyes but no mouth.[line break]Have you discovered all five deaths, excluding this one?" 
+
+Instead of jumping: say "You try as hard as you can, but you never leave the ground."
+
+Understand the command "use" as "open".
+
+Instead of answering: say "You realise that you cannot speak!"
+
+Instead of telling: say "You realise that you cannot speak!"
+
+The maximum score is 50.
+
+The story creation year is 2014. 
+
+The release number is 3. 
+
+Section 1 - White Cube
+
+White Cube is a room. The White Cube can be hot, cold or non-existant. White Cube is hot. "[if hot]This room surrounds you with white foam boards, each three metres long and three metres wide. It is rather hot in here.[otherwise]This room surrounds you with white foam boards, each three metres long and three metres wide. After enduring the heat earlier, the coolness of the room makes you feel relieved." The Player is here.
+
+panel is an object. "A panel is located on the south wall." It is in the White Cube. The panel can be broken, working or detached. The Panel is working. The panel is fixed in place.
+
+The description of the Panel is "[if working]The panel is small and rectangular, attached firmly to the wall. It has red and blue buttons on it's face.[end if][if broken]The panel is small and rectangular. It has black burn marks all over it's face. It sticks out a bit from the wall.[end if][if detached]The panel is small and rectangular. It has black burn marks all over. It has red and blue buttons on it's face.[end if]"
+
+After taking panel:
+	if panel is broken,
+		say "You pry off the panel from the wall to reveal a hole."; now panel is detached; move Small hole to White Cube.
+
+After pulling panel:
+	if panel is broken,
+		say "You pry off the panel from the wall to reveal a hole."; now panel is detached; move Small hole to White Cube; now player is carrying panel.
+
+After taking panel:
+	if panel is broken,
+		say "You pry off the panel from the wall to reveal a hole."; now panel is detached; move Small hole to White Cube.
+
+the red button is a part of the Panel. The description of the red button is "The red button has an image of a flame on it, as well as being red."
+
+the blue button is a part of the Panel. The description of the blue button is "The blue button has an image of a snowflake on it, as well as being blue."
+
+Instead of attacking the red button:
+	try pushing the red button.
+
+Instead of attacking the blue button:
+	try pushing the blue button.
+	
+Instead of pushing the red button when the panel is working:
+	say "As if it wasn't hot enough already, a gust of even hotter air fills the already hot room. Unable to take the heat, your internal body temperature shoots up as you stumble around before slumping on the ground, dead."; end the story saying "You have died".
+
+Instead of pushing the red button when the panel is not working:
+	say "You give the red button a push, but nothing happens. It could have something to do with the fact that you broke the panel earlier.[line break]".
+
+Instead of pushing the blue button when the panel is working:
+		say "As you push the blue button, sparks fly out, jolting you backwards against the northen wall, knocking you out. The panel may be damaged. You should see if it broke or something.[line break]When you come to, you feel a cool gust of air hitting you in the face. You feel relieved."; now the panel is portable; now the panel is broken; now White Cube is cold; move wires to White Cube.
+		
+Instead of pushing the blue button when the panel is not working:
+	say "You give the blue button a push, but nothing happens. It could have something to do with the fact that you broke the panel earlier.[line break]"
+
+The small hole is a container. It is fixed in place. "A hole in the wall lies south"
+
+The description of the Small hole is "Wires stick out of this hole, burnt. It must have ceased function when you tried to use it earlier."
+
+a potato is in the small hole. The potato can be might-be-hologram or not-hologram. It is might-be-hologram.
+
+Burnt Wires are scenery. The description of the wires is "Burnt wires occupy the hole. They will most likely have to be replaced."
+
+Understand "wire" as the burnt wires.
+
+Instead of taking wires: say "You tug at it, but the wires stay inside."
+
+Instead of pulling wires: say "You tug at it, but the wires stay inside."
+
+The description of the potato is "[if might-be-hologram]A brown tuber with spots. You wonder what it is doing here.[otherwise]A brown tuber with spots. It didn't disappear with the rest of the holographic projection so you must assume that it is indeed real. This begs the question: What is it doing here?"
+
+Instead of inserting panel into the Small Hole: say "Maybe the fact that the panel was used to cover the hole itself is the reason that it cannot fit in said hole.[line break]"
+
+Instead of eating the potato when potato is in Small Hole: say "You try to take a bite at it, but you can't fit your head into the hole. Maybe you should try picking it up first.[line break]".
+
+Instead of eating the potato when player is carrying potato and White Cube is cold: say "You don't know why, but your psyche is preventing you from eating the potato.[paragraph break]The room starts to rumble.  Turbulence, perhaps?[paragraph break]Suddenly, the White Cube you are in vanishes to reveal that you were in the Holodeck all along. You silently curse at whoever it was who put you here, ran the program and turned the safety precautions off. You could have died![line break]"; move player to Holodeck; now White Cube is non-existant; remove small hole from play; remove panel from play; now potato is not-hologram.
+
+Instead of eating the potato when White Cube is non-existant: say "You don't know why, but your psyche is preventing you from eating the potato.[line break]"
+
+After taking the potato for the first time:
+	increase the score by 50.
+
+time of day is 12:00 AM
+
+At 12:01 AM:
+	if room is hot,
+		say "You feel mildly warm."
+
+At 12:04 AM:
+	if room is hot,
+		say "You start to sweat in the sweltering heat."
+
+At 12:7 AM:
+	if room is hot,
+		say "The heat is making you dizzy."
+
+At 12:10 AM:
+	if room is hot,
+		say "You start to feel faint."
+
+At 12:13 AM:
+	if room is hot,
+		say "Unable to take the heat, you stumble around before slumping on the ground, dead."
+		
+At 12:13 AM:
+	if room is hot,
+		end the story saying "You have died"
+
+the foam is scenery. It is in the White Cube. The description of the foam is "White foam makes up the walls, ceiling and floor."
+
+Understand "wall", "walls", "floor", "ceiling", "board" and "white" as the foam.
+
+Instead of eating panel:
+	say "No matter how hard you try, you simply can't seem to eat it."
+
+Understand the command "stick" and "plug" as "put".
+
+Instead of tying burnt wires to the potato:
+	say "You aren't trying to make PotatOS here!"
+
+Instead of putting burnt wires on the potato:
+	say "You aren't trying to make PotatOS here!"
+
+Instead of inserting burnt wires into the potato:
+	say "You aren't trying to make PotatOS here!"
+
+Section 2 - Holodeck and Corridors
+
+Holodeck is a room. "The walls of this room are filled with a yellow grid on a black background. This room is used to simulate events using holograms. There is a door located north."
+
+Grid is scenery. It is in the Holodeck. The description of the grid is "The yellow grid criss-crosses across the whole room. You wonder why they chose such a poor design for this room."
+
+Holodeck Door is a door. It is scenery. Holodeck Door is north of Holodeck and south of Corridor 2B. It is open. The description of the Holodeck Door is "This door connects the Holodeck to the corridor outside."
+
+Instead of closing Holodeck Door:
+	say "The door is already closed"
+
+Instead of opening Holodeck Door:
+	say "The doors on this ship are automatic. They only open while you are walking through it."
+
+Corridor 2B is a room. "This corridor is one of many in the giant maze that is this ship. Red lights are currently blinking, and a concurrent beeping noise sounds. The corridor continues east. The turbolift is located west."
+
+Corridor 2C is a room. It is east of Corridor 2B. "This corridor, just like the one you were just on earlier, is one of many in the giant maze that is this ship. Red lights are currently blinking, and a concurrent beeping noise sounds. The corridor continues east and west. A set of doors lie north."
+
+2B Lights is scenery. It is in Corridor 2B. The description of 2B Lights is "Red lights. It must signify something, but you do not know what."
+
+2C Lights is scenery. It is in Corridor 2C. The description of 2C Lights is "Red lights. It must signify something, but you do not know what."
+
+Understand "light" as 2B Lights and 2C Lights
+
+Section 3 - Turbolift
+
+Turbolift is a room with printed name "Turbolift (on Deck 2)". "The cylindrical walls of this glorified tuna can of an elevator greet you. You can hear a low humming from the machines that make it work. The door you entered in from is east. You can use the turbolift to go [bold type]up[roman type] or [bold type]down[roman type] to different decks on the ship."
+
+The lamp is a device. Lamp can be charged or uncharged. Lamp is uncharged. It is in the Turbolift. "A lamp lies on the floor. You wonder who left it here."
+
+The description of the lamp is "An ordinary lamp. Although where you found it raises some questions."
+
+Instead of switching on lamp while lamp is uncharged:
+	say "The lamp fails to light up. Maybe it has no power?"
+
+Instead of switching on lamp while lamp is charged:
+	say "The lamp begins to glow softly.";
+	now lamp is lit;
+	now lamp is switched on.
+
+Instead of switching off lamp while lamp is charged:
+	say "The lamp goes out";
+	now lamp is not lit;
+	now lamp is switched off.
+
+Understand "lantern","light","bulb" as the lamp.
+
+Instead of going up in the Turbolift:
+	say "You try to issue the command to the computer, but you find that you somehow cannot speak![line break]"
+
+Instead of going down in the Turbolift:
+	say "You try to issue the command to the computer, but you find that you somehow cannot speak![line break]"
+
+Instead of eating lamp:
+	say "No matter how hard you try, you simply can't seem to eat it."
+
+Turbolift Door is a door. It is scenery. It is west of Corridor 2B and east of Turbolift. It is open. The description of Turbolift Door is "This door connects the Turbolift to the corridor outside."
+
+Instead of closing Turbolift Door:
+	say "The door is already closed"
+
+Instead of opening Turbolift Door:
+	say "The doors on this ship are automatic. They only open while you are walking through it."
+
+Section 4 - Shuttle Bay
+
+Shuttle Bay is a room. "This large room is where shuttles are stored, but you can only see a small one here at the moment. The door to enter the room lies north, while a gigantic door is on the wall east. A pile of tools lie discarded in the corner and a lever sticks up from the ground. A power infuser is in the west wall."
+
+Small Shuttle is a room. "[if player is not in Small Shuttle]The shuttle seems rather small. You doubt anyone could stand being in there for more than an hour.[otherwise]The shuttle as small as you had thought it would be. A window looks out into the shuttle bay, while beneath that is a console."
+
+After deciding the scope of the player: 
+	if the player is in Shuttle Bay, place the Small Shuttle in scope.
+
+Instead of going inside while player is in the Shuttle Bay:
+	say "You get inside the shuttle.";
+	move player to small shuttle.
+
+Instead of entering Small Shuttle while player is in the Shuttle Bay:
+	say "You get inside the shuttle.";
+	move player to small shuttle.
+
+Instead of exiting while player is in the small shuttle:
+	say "You get out of the shuttle.";
+	move player to Shuttle Bay.
+
+Instead of taking Small Shuttle: say "It's too heavy!"
+
+Window is scenery in the Small Shuttle. The description of the window is "A window on the front of the shuttle. There's nothing else to it."
+
+Console is scenery in the Small Shuttle. The description of the console is "A random (or so you think) assortment of buttons, switches and levers. You have no idea what any of them do."
+
+Instead of examining outside: say "You can see the Shuttle Bay from here."
+
+Instead of searching window: say "You can see the Shuttle Bay from here."
+
+Instead of attacking window: say "Can't you just [bold type]exit[roman type] the shuttle like a normal sentient being would?"
+
+Understand "windshield" and "windscreen" as the window.
+
+Understand "button", "buttons", "switch", "switches", "lever" and "levers" as the console.
+
+Understand the command "flip" as "pull".
+
+Instead of pulling, pushing, opening, attacking or touching console: say "You pull some levers, push some buttons and flip some switches randomly. Suddenly, the ship starts to rise! You must have activated the autopilot! At long last, you can finally start your epic space adventure![paragraph break]The shuttle abruptly descends and lands back on the ground. It must be unable to find a way out of the shuttle bay, what with the giant doors being closed and all. If you got them opened, however..."
+
+The pile of tools is an object. It is in the Shuttle bay. It is scenery. The description of the pile of tools is "A pile of discarded tools. They don't look useful at all."
+
+Understand "tool" as the pile of tools.
+
+Instead of taking pile of tools:
+	say "You try to pick one up, but find that they are too heavy. What are they made of, ununoctium?"
+
+Instead of going east in Shuttle Bay:
+	say "There's a giant door in the way.[line break]"
+	
+Instead of going east in Corridor 2C:
+	say "You navigate the maze of corridors. It's a wonder that you don't bump into anyone.[line break]";
+	move player to Shuttle Bay.
+
+Instead of going north in Shuttle Bay:
+	say "You navigate the maze of corridors. It's a wonder that you don't bump into anyone.[line break]";
+	move player to Corridor 2C.
+
+Lever is in the Shuttle Bay. It is scenery. It is fixed in place. The description of the lever is "A big lever is built into the floor. Why would anyone in their right mind (save for mad scientists) design a room this way?"
+
+Instead of pulling lever:
+	say "The giant doors of the shuttle bay open into the deep chill of space. It also sucks all the air out, and you along with it.";
+	end the story saying "You have died".
+
+shuttle bay door is a door. It is north of Shuttle Bay. It is scenery. It is open. The description of the Shuttle Bay door is "This door connects the Shuttle Bay to the corridor outside."
+
+the giant shuttle bay door is a door. It is east of Shuttle Bay. It is scenery. It is closed. The description of the giant shuttle bay door is "This rather large door is used to let shuttles in and out of the ship. It is currently closed."
+
+Instead of opening giant shuttle bay door:
+	say "There should be a mechanism to open this door somewhere because you don't see any handles or doorknobs here. "
+
+Instead of closing Shuttle Bay Door:
+	say "The door is already closed"
+
+Instead of opening Shuttle Bay Door:
+	say "The doors on this ship are automatic. They only open while you are walking through it."
+
+Power infuser is a container in the Shuttle Bay. It is scenery. The description of the Power infuser is "The power infuser is basically just a charger that can power devices. It resides in a small hole in the western wall." It has a carrying capacity 1.
+
+Instead of taking power infuser: say "It's literally a small hole in the wall. How are you supposed to carry a hole around with you?"
+
+Instead of inserting the potato into the power infuser:
+	say "You put the potato in the power infuser and it begins its work.[paragraph break]After a few moments, the potato catches fire! The fire then slowly sets the rest of the room on fire, and you along with it. You roast in the flames.";
+	end the story saying "You have died"
+	
+Instead of inserting the lamp into the power infuser while lamp is uncharged:
+	say "You put the lamp in the power infuser and it begins its work.[paragraph break]After a few moments, a light beep sounds. It looks like the lamp is charged!";
+	now lamp is charged;
+	now lamp is in power infuser.
+
+Instead of inserting the lamp into the power infuser while lamp is charged and lamp is not in power infuser:
+	say "You put the lamp in the power infuser and it begins its work.[paragraph break]After a few moments, a long beep sounds and the lamp is shot back out at a great force. The lamp must be already charged and the machine must be irritated that you wasted it's time.[paragraph break]The force of the flying lamp puts a hole through you and you die immediately afterwards.";
+	end the story saying "You have died"
+
+Instead of inserting the lamp into the power infuser while lamp is charged and lamp is in power infuser:
+	say "It's already inside!";
+
+Understand "hole" and "charger" as the power infuser.
+
+Section 5 - Crew Quarters
+
+Crew Quarters is a dark room. "The living quarters of a crew member. On the table is a communications device. On the bed is a book. Standing on the floor is a full length mirror. A set of doors lie south, back into the corridors."
+
+Rule for printing the description of a dark room: 
+	say "It is pitch black. You are likely to be eaten by a grue.[paragraph break]You remember, however, that the exit is south." instead.
+
+Instead of going east while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going west while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going north while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going up while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going down while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going northeast while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going northwest while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going southeast while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+Instead of going southwest while player is in a dark room:
+	end the story saying "You were eaten by a grue"
+
+the table is a supporter. It is in the Quarters. It is scenery.
+
+The description of the table is "A glass coffee table sits in the middle of the room. The stand has intricate designs on them. The Communications Device is placed atop it."
+
+the Communications Device is an object. The Communications Device can be switched on. It is on the table. It is scenery.
+
+The description of the Communications Device is "This small, flat, rectangular device has a black sleek exterior and rounded corners. It's face is taken up mostly by a screen. Below the screen is a circular button with a rounded square on it. It appears to be turned off."
+
+Understand "iPhone", "phone", "cell phone" and "mobile phone" as the Communications Device.
+
+Instead of switching on Communications Device: say "You wouldn't want to be poking around someone's belongings.[line break]"
+
+the bed is a supporter. It is in the Quarters. It is scenery.
+
+The description of the bed is "A standard-issue bed. It's not as comfortable as what one would have liked, but it'll have to do. A book sits on the bed."
+
+The book is an object. It is on the bed. It is scenery.
+
+The description of the book is "Unfortunately, you realise that you have no idea how to read."
+
+the full length mirror is an object. It is fixed in place. It is in the Quarters. It is scenery.
+
+The home button is an object. It is part of the Communications Device. The description of the button is "Located below the screen of the communications device, this circular button has a rounded square on it's face."
+
+Understand "button", "home" as the home button
+
+The screen is an object. It is part of the Communications Device. The description of the screen is "A flat screen on communications device, below which is a button."
+
+Instead of pushing button: say "You poke the button but nothing happens. Maybe it has to be turned on?[line break]"
+
+Instead of touching screen: say "You poke the screen but nothing happens. Maybe it has to be turned on?[line break]"
+
+Instead of pushing screen: say "You poke the screen but nothing happens. Maybe it has to be t
+urned on?[line break]"
+
+Instead of taking Communications Device: say "You wouldn't want to be poking around someone's belongings.[line break]"
+
+Instead of taking book: say "You wouldn't want to be poking around someone's belongings.[line break]"
+
+Instead of taking bed: say "It's too heavy to move.[line break]"
+
+Instead of taking table: say "It's too heavy to move.[line break]"
+
+Instead of pushing table: say "It's too heavy to move.[line break]"
+
+Instead of pushing bed: say "It's too heavy to move.[line break]"
+
+Instead of taking mirror: say "It's too heavy to move.[line break]"
+
+Instead of pushing mirror: say "It's too heavy to move.[line break]"
+
+Automatic Door is a door. It is scenery. Automatic Door is north of Corridor 2C and south of Crew Quarters. It is open. The description of Automatic Door is "This door connects the Crew Quarters to the corridor outside."
+
+Instead of closing Automatic Door:
+	say "The door is already closed"
+
+Instead of opening Automatic Door:
+	say "The doors on this ship are automatic. They only open while you are walking through it."
+
+Instead of examining Full length mirror: say "You look into the mirror and realise that...[paragraph break]You are a potato![paragraph break]You explode into a pulp at the realization of this fact.[paragraph break]A voice somewhere says: 'Thanks for playing!'"; end the story finally saying "You have turned into mashed potato".
+
+Instead of examining the player while the player is in Quarters: say "You look into the mirror and realise that...[paragraph break]You are a potato![paragraph break]You explode into a pulp at the realization of this fact.[paragraph break]A voice somewhere says: 'Thanks for playing!'"; end the story finally saying "You have turned into mashed potato".
