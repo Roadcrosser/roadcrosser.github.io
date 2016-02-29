@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.1.7.8
+Unumanus v.1.7.9
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -57,8 +57,8 @@ Random, Randnum,1,% Orngarray10 ; orange
 Orng1 := Orngarray1%Randnum%
 Random, Randnum,1,% Orngarray20 ; Corns wants a <st> tag or something, I dunno why.
 Orng3 := Orngarray2%Randnum%
-Random, Randnum, 1,5 ; chance to get suffix
 
+Random, Randnum, 1,5 ; chance to get suffix
 if Randnum = 1
 {
   Random, Randnum,1,% Orngarray20 ; star
@@ -67,6 +67,13 @@ if Randnum = 1
 else
 {
   Orng2 =
+}
+
+Random, Randnum,1,3
+if Randnum = 1
+{
+  Random, Randnum,10,19
+  Orng4 := Randnum
 }
 
 if Instr(Orng1, "~") > 0 ; Special Names that don't need no star
@@ -80,6 +87,11 @@ if Instr(Orng1, "+") > 0 ; Special Names that depend on the star for it's succes
   StringTrimRight, Orng1, Orng1, 1
   Random, Randnum,1,% Orngarray20
   Orng2 := Orngarray2%Randnum%
+}
+
+if Orng2 =
+{
+  Orng4 =
 }
 
 :*:<hf>::
@@ -99,7 +111,7 @@ if GetKeyState("CapsLock", "T") = 1
   StringUpper, Orng1, Orng1
   StringUpper, Orng2, Orng2
 }
-Send %Orng1%%Orng2%
+Send %Orng1%%Orng2%%Orng4%
 reload
 return
 
@@ -405,6 +417,12 @@ SendEvent {U+00B6}
 }
 return
 
+:*:<gear>:: ; ⚙
+{
+SendEvent {U+2699}
+}
+return
+
 :*:=/=:: ; ≠
 {
 SendEvent {U+2260}
@@ -655,7 +673,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7.8"
+	, Version_Number := "1.7.9"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
