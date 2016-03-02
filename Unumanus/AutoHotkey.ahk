@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.1.7.9
+Unumanus v.1.7.10
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -21,6 +21,9 @@ Note: If you see a big garble of characters above, you might want to consider ig
 
 Check_ForUpdate() ; This line initiates an update check, if you don't want to update and it annoys you a lot, remove it.
 
+Sleep 21600000
+Reload
+
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 /*
 ╔══════════════════╗
@@ -29,13 +32,15 @@ Check_ForUpdate() ; This line initiates an update check, if you don't want to up
 */
 Heats1 = Wang Fire~|That guy whose name I cant remember~|That guy whose name I forgot~|Firey Whatsisface~|That guy who's made of fire, you know the one.~|Mr. Burns~|Steve~|Red Hot Chibi Pepper~|Mr. Hotpants McGee~|SO EASILY DEFEATED~|Grillby~|Mr. Explosion~|Burnie Cinders~|Jack Frost~|Potentia|Ignis|Heats|Flames|Firey|Hot|Fire|Hots|Fires|Flame|Flamey|Heaty|Burning|Char|Charred|Charry|Burns|Burn|Blazes|Blaze|Blazing|Ember|Embers|Arson|Sparky|Sparks|Infernal|Inferno|Melt|Melts|Melty|Melting|Seary|Searing|Sear|Swelter|Sweltering|Thermal|Warm|Roast|Roasty|Combustion|Combustiony|Broil|Broils|Broily|Broiling|Boil|Boils|Boily|Boiling|Warms|Flaming|Heating|Warming|Roasting|Flameo|Toast|Toasts|Toasting|Toasty|Lava|Lavas|Magma|Magmas|Stars|Star|Starry|Grill|Grilly|Grilling|Steam|Steamy|Steamer|Steams|Redhot|Redhots|Spicy|Spice|Spicing|Fuming|Fumes|Blast|Blasts|Blasting|Blaster|Cinder|Cinders|Pyro|Sizzling|Sizzle|Sizzler|Sizzles
 Heats2 = man|guy|dude|face|head|waffle|bro|bud|bub|smith|runt|pip|ton|sir|ster|boy|ius|master|kid
-Orng1 = j{#}rew{!}3d9Sb~|Orange Quartz~|Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|orbit+|Matt Groerange|tangerine|oranot|norbert|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
+Orng1 = nancy~|j{#}rew{!}3d9Sb~|Orange Quartz~|Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|orbit+|Matt Groerange|tangerine|oranot|norbert|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
 Orng2 = stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|star|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|sweat|suit|stress|sort|spit|ASSET|swood|stan|juice|puff|-chan|-san|-kun|-sama|-sensei
+Orng4 = 1|10|11|12|13|14|15|16|17|18|19|one|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen
 
 StringSplit HeatsArray1, Heats1, |
 StringSplit HeatsArray2, Heats2, |
 StringSplit Orngarray1, Orng1, |
 StringSplit Orngarray2, Orng2, |
+StringSplit Orngarray4, Orng4, |
 
 Random, Randnum,1,% HeatsArray10 ; Heats
 Heats1 := HeatsArray1%Randnum%
@@ -69,11 +74,26 @@ else
   Orng2 =
 }
 
-Random, Randnum,1,3
+Random, Randnum,1,3 ; chance to get a number
 if Randnum = 1
 {
-  Random, Randnum,10,19
-  Orng4 := Randnum
+  Random, Randnum, 1,% Orngarray40 ;12
+  Orng4 := Orngarray4%Randnum%
+}
+else
+{
+  Orng4 =
+}
+
+Random, Randnum,1,3 ; chance to get a second number
+if Randnum = 1
+{
+  Random, Randnum, 1,% Orngarray40 ;11
+  Orng5 := Orngarray4%Randnum%
+}
+else
+{
+  Orng5 =
 }
 
 if Instr(Orng1, "~") > 0 ; Special Names that don't need no star
@@ -94,6 +114,11 @@ if Orng2 =
   Orng4 =
 }
 
+if Orng4 =
+{
+  Orng5 =
+}
+
 :*:<hf>::
 if GetKeyState("CapsLock", "T") = 1
 {
@@ -110,8 +135,10 @@ if GetKeyState("CapsLock", "T") = 1
 {
   StringUpper, Orng1, Orng1
   StringUpper, Orng2, Orng2
+  StringUpper, Orng4, Orng4
+  StringUpper, Orng5, Orng5
 }
-Send %Orng1%%Orng2%%Orng4%
+Send %Orng1%%Orng2%%Orng4%%Orng5%
 reload
 return
 
@@ -237,6 +264,12 @@ return
 :*:<wut>:: ; ఠ͟ ಠ
 {
 SendEvent {U+0C20}{U+035F}{U+0CA0}{Left}{Space}{Right}
+}
+return
+
+:*:<facepalm>:: ; (－‸ლ)
+{
+SendEvent {(}{U+FF0D}{U+2038}{U+10DA}{)}
 }
 return
 
@@ -673,7 +706,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7.9"
+	, Version_Number := "1.7.10"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
