@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.1.7.10
+Unumanus v.1.8
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -706,7 +706,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.7.10"
+	, Version_Number := "1.8"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
