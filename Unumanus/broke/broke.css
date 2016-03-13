@@ -26,7 +26,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   text-align:left;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Exo 2', sans-serif;
 
   background-color: #fff7e6;
   position: relative;
@@ -39,6 +39,6 @@ a:hover {
   padding: 10px;
   background-color: #cc9900;
   text-align:center;
-  font-family: 'Arimo', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   z-index: 1
 }

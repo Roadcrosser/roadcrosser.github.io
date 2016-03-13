@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.1.9
+Unumanus v.2.0
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -17,28 +17,86 @@ Note: If you see a big garble of characters above, you might want to consider ig
  4. Right-click the AutoHotkey Icon in the System Tray and select "Reload This Script".
 
 */
+#SingleInstance force
 #Hotstring ?
-
-Check_ForUpdate() ; This line initiates an update check, if you don't want to update and it annoys you a lot, remove it.
 
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 /*
-╔══════════════════╗
-║   RANDOMIZERS    ║
-╚══════════════════╝
+╔═══════════════════════════╗
+║ CONFIG FILES SURE ARE FUN ║
+╚═══════════════════════════╝
 */
+
+IniRead, Present, %A_MyDocuments%\UnumanusConfig.ini, Config, Does This Config File Exist
+
+if Present != Probably
+{
+FileDelete, %A_MyDocuments%\UnumanusConfig.ini
+FileAppend,
+(
+[Config]
+Does This Config File Exist=Probably
+
+[Don't Touch This.]
+Definitely an important value=8
+
+[Script Functions]
+Enable Orange Randomizer=1
+Enable Heats Randomizer=1
+Enable Automatic Update Checking=1
+How long to wait until checking for an update again (in milliseconds - 0 to disable)=21600000
+Enable Surface Pen Remapping=0
+Enable Volume Changing=1
+FUN=2
+), %A_MyDocuments%\UnumanusConfig.ini, UTF-8-RAW
+}
+
+IniRead, Important, %A_MyDocuments%\UnumanusConfig.ini, Don't Touch This., Definitely an important value
+
+IniRead, OrgnRNG, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, Enable Orange Randomizer
+IniRead, HeatsRNG, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, Enable Heats Randomizer
+IniRead, AutoUpdate, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, Enable Automatic Update Checking
+IniRead, UpdateDelay, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, How long to wait until checking for an update again (in milliseconds - 0 to disable)
+IniRead, EnablePen, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, Enable Surface Pen Remapping
+IniRead, FUN, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, FUN
+
+if Important != 8
+{
+if FUN >= 1
+{
+MsgBox Look what you've done, you've changed the important value I told you not to touch!
+MsgBox Hold on while I fix that...
+}
+IniWrite, 8, %A_MyDocuments%\UnumanusConfig.ini, Don't Touch This., Definitely an important value
+}
+
+if AutoUpdate = 1
+{
+Check_ForUpdate()
+}
+
+if FUN > 3
+{
+if FUN = 66
+{
+MsgBox Why would you set your fun value that high? It's not like Gaster's gonna come out or anything.
+}
+IniWrite, 3, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, FUN
+}
+
+;—————————————————————————————————————————————————————————————————————————————————————————————————
+/*
+╔═══════════════════╗
+║  RANDOMIZER INIT  ║
+╚═══════════════════╝
+*/
+
+if HeatsRNG = 1
+{
 Heats1 = Wang Fire~|That guy whose name I cant remember~|That guy whose name I forgot~|Firey Whatsisface~|That guy who's made of fire, you know the one.~|Mr. Burns~|Steve~|Red Hot Chibi Pepper~|Mr. Hotpants McGee~|SO EASILY DEFEATED~|Grillby~|Mr. Explosion~|Burnie Cinders~|Jack Frost~|Potentia|Ignis|Heats|Flames|Firey|Hot|Fire|Hots|Fires|Flame|Flamey|Heaty|Burning|Char|Charred|Charry|Burns|Burn|Blazes|Blaze|Blazing|Ember|Embers|Arson|Sparky|Sparks|Infernal|Inferno|Melt|Melts|Melty|Melting|Seary|Searing|Sear|Swelter|Sweltering|Thermal|Warm|Roast|Roasty|Combustion|Combustiony|Broil|Broils|Broily|Broiling|Boil|Boils|Boily|Boiling|Warms|Flaming|Heating|Warming|Roasting|Flameo|Toast|Toasts|Toasting|Toasty|Lava|Lavas|Magma|Magmas|Stars|Star|Starry|Grill|Grilly|Grilling|Steam|Steamy|Steamer|Steams|Redhot|Redhots|Spicy|Spice|Spicing|Fuming|Fumes|Blast|Blasts|Blasting|Blaster|Cinder|Cinders|Pyro|Sizzling|Sizzle|Sizzler|Sizzles
 Heats2 = man|guy|dude|face|head|waffle|bro|bud|bub|smith|runt|pip|ton|sir|ster|boy|ius|master|kid
-Orng1 = Stargarine~|nancy~|j{#}rew{!}3d9Sb~|Orange Quartz~|Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|orbit+|dubmo|mango|Matt Groerange|oj|tangerine|oranot|norbert|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
-Orng2 = stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|star| star|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|sweat|suit|stress|sort|spit|ASSET|swood|stan|juice|puff|-chan|-san|-kun|-sama|-sensei
-Orng3 = 1|10|11|12|13|14|15|16|17|18|19|one|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen
-
 StringSplit HeatsArray1, Heats1, |
 StringSplit HeatsArray2, Heats2, |
-StringSplit Orngarray1, Orng1, |
-StringSplit Orngarray2, Orng2, |
-StringSplit Orngarray3, Orng3, |
-
 Random, Randnum,1,% HeatsArray10 ; Heats
 Heats1 := HeatsArray1%Randnum%
 Random, Randnum,15,% HeatsArray10 ; Flames
@@ -46,7 +104,6 @@ Heats2 := HeatsArray1%Randnum%
 Random, Randnum,1,% HeatsArray20 ; man
 Heats3 := HeatsArray2%Randnum%
 Heats4 := " " ; The letter space, the final frontier.
-
 if Instr(Heats1, "~") > 0
 {
   StringTrimRight, Heats1, Heats1, 1
@@ -54,7 +111,16 @@ if Instr(Heats1, "~") > 0
   Heats3 =
   Heats4 =
 }
+}
 
+if OrgnRNG = 1
+{
+Orng1 = bogosort~|Bootleg Michaelangestar Jackson~|Stargarine~|nancy~|j{#}rew{!}3d9Sb~|Orange Quartz~|Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|orbit+|dubmo|mango|Matt Groerange|oj|tangerine|oranot|norbert|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
+Orng2 = juicestain|stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|star| star|starstar| starstar|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|sweat|suit|stress|sort|spit|ASSET|swood|stan|juice|puff|-chan|-san|-kun|-sama|-sensei
+Orng3 = 1|10|11|12|13|14|15|16|17|18|19|one|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen
+StringSplit Orngarray1, Orng1, |
+StringSplit Orngarray2, Orng2, |
+StringSplit Orngarray3, Orng3, |
 Random, Randnum,1,% Orngarray10 ; orange
 Orng1 := Orngarray1%Randnum%
 Random, Randnum,1,% Orngarray20 ; star (opt)
@@ -63,7 +129,6 @@ Random, Randnum,1,% Orngarray30 ; 12 (opt)
 Orng6 := Orngarray3%Randnum%
 Random, Randnum,1,% Orngarray30 ; 11 (opt)
 Orng7 := Orngarray3%Randnum%
-
 Random, Randnum, 1,5 ; chance to get suffix
 if Randnum = 1
 {
@@ -122,10 +187,32 @@ if Orng3 =
 {
   Orng4 =
 }
+}
+;—————————————————————————————————————————————————————————————————————————————————————————————————
+/*
+╔══════════════╗
+║ AUTO UPDATES ║
+╚══════════════╝
+*/
 
-Sleep 21600000
-Reload
+if AutoUpdate = 1
+{
+  if UpdateDelay != 0
+  {
+    if UpdateDelay is integer
+    {
+      Sleep %UpdateDelay%
+      Reload
+    }
+  }
+}
 Return
+;—————————————————————————————————————————————————————————————————————————————————————————————————
+/*
+╔═════════════════════╗
+║ RANDOMIZER TRIGGERS ║
+╚═════════════════════╝
+*/
 
 :*:<hf>::
 if GetKeyState("CapsLock", "T") = 1
@@ -146,7 +233,7 @@ if GetKeyState("CapsLock", "T") = 1
   StringUpper, Orng4, Orng4
   StringUpper, Orng5, Orng5
 }
-Send %Orng1%%Orng2%%Orng4%%Orng5%
+Send %Orng1%%Orng2%%Orng3%%Orng4%
 reload
 return
 
@@ -161,6 +248,19 @@ if GetKeyState("CapsLock", "T") = 1
 Send %Orng1%%Orng5%%Orng6%%Orng7%
 reload
 return
+
+:*:<rip>::
+if FUN >= 1
+{
+rip = https://www.youtube.com/watch?v=GJbjKX3MFnc|https://tcrf.net/images/8/80/Undertale_Mus_kingdescription.ogg|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Studio`%20Pixel/Gameover.mp3|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Danny`%20Baranowsky/Game`%20Over.mp3|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Yann`%20van`%20der`%20Cruyssen/Game`%20Over.mp3|http://i.imgur.com/Iu436XX.png|http://i.imgur.com/Jy1n3v9.png|http://i.imgur.com/F34dyIW.png|http://i.imgur.com/31RzSh6.png|http://i.imgur.com/tPy9tHW.gif|http://i.imgur.com/nXmydCU.png|https://www.youtube.com/watch?v=RSrrniGr-ac|https://i.imgur.com/KxB69lc.gif|http://roadcrosser.xyz/clap.mp3|http://i.imgur.com/y3rMXjr.png|https://www.youtube.com/watch?v=4vSNnVVBdIg
+
+StringSplit riparray, rip, |
+Random, Randnum, 1, % riparray0
+rip := riparray%Randnum%
+Send %rip%
+}
+reload
+
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 
 /*
@@ -171,6 +271,11 @@ return
 ^!a::Suspend
 
 ;^r::Reload
+
+:*:<reload>::
+Reload
+return
+
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 /*
 ╔══════════════════╗
@@ -178,15 +283,27 @@ return
 ╚══════════════════╝
 */
 ;Click top once
-#F20:: Send, {MButton}
+#F20::
+if EnablePen = 1
+{
+Send, {MButton}
+}
 Return
 
 ;Click top twice
-#F19:: Run, %ProgramFiles%\Common Files\microsoft shared\ink\TabTip.exe
+#F19::
+if EnablePen = 1
+{
+Run, %ProgramFiles%\Common Files\microsoft shared\ink\TabTip.exe
+}
 Return
 
 ;Hold top
-#F18:: Send,^+4
+#F18::
+if EnablePen = 1
+{
+Send,^+4
+}
 Return
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 /*
@@ -198,28 +315,59 @@ Return
 ;Texty stuff for text
 :?0:teh::the
 :?0:adn::and
-::@@::@gmail.com
+::@@::@gmail
+
 :*:<tokyo>::
-(
-WHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAT
-)
+if FUN >= 1
+{
+SendRaw WHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAT
+}
+return
+
 :*:<binary>::
-(
-01101000011101000111010001110000001110100010111100101111011100100110111101100001011001000110001101110010011011110111001101110011011001010111001000101110011110000111100101111010001011110111010001101001011011010110010100101111
-)
+if FUN >= 1
+{
+SendRaw 01101000011101000111010001110000001110100010111100101111011100100110111101100001011001000110001101110010011011110111001101110011011001010111001000101110011110000111100101111010001011110111010001101001011011010110010100101111
+}
+return
+
 :*:<hex>::
-(
-68 74 74 70 3a 2f 2f 72 6f 61 64 63 72 6f 73 73 65 72 2e 78 79 7a 2f 74 69 6d 65 2f
-)
+if FUN >= 1
+{
+SendRaw 68 74 74 70 3a 2f 2f 72 6f 61 64 63 72 6f 73 73 65 72 2e 78 79 7a 2f 74 69 6d 65 2f
+}
+return
+
 :*:<script>::http://roadcrosser.xyz/Unumanus/
 :*:<changelog>::http://roadcrosser.xyz/Unumanus/changelog/
 :*:<troubleshoot>::http://roadcrosser.xyz/Unumanus/broke/
-:*:<rip>::http://i.imgur.com/F34dyIW.png
+
 :?0b0:kek::
+if FUN >= 2
+{
 if GetKeyState("Enter") {
     SendRaw cake*
       return
   }
+}
+return
+
+:?0b0:wow::
+if FUN >= 3
+{
+Random, Randnum, 1, 100
+  if Randnum = 1
+  {
+    MsgBox Ethan, Great moves. Keep it up. I'm proud of you.
+  }
+}
+return
+
+:*?0b0:kkk:: ; ĶҞҠ
+if FUN >= 3
+{
+  SendEvent {Backspace}{Backspace}{Backspace}{U+0136}{U+049E}{U+04A0}
+}
 return
 
 ;Kaomoji
@@ -288,6 +436,12 @@ return
 :*:<facepalm>:: ; (－‸ლ)
 {
 SendEvent {(}{U+FF0D}{U+2038}{U+10DA}{)}
+}
+return
+
+:*:<squid>:: ; くコ:彡
+{
+SendEvent {U+304F}{U+30B3}:{U+5F61}
 }
 return
 
@@ -498,6 +652,12 @@ SendEvent {U+221E}
 }
 return
 
+:*:<em>:: ; —
+{
+SendEvent {U+2014}
+}
+return
+
 :*:<zw>:: ; ​
 {
 SendEvent {U+200B}
@@ -705,7 +865,10 @@ return
 ; DISCLAIMER: Do NOT put your cups in the CD drive.
 
 :*:<cup holder>::
+if FUN >= 2
+{
 Drive, Eject
+}
 return
 
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
@@ -724,7 +887,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "1.9"
+	, Version_Number := "2.0"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
@@ -752,7 +915,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 			Continue
 		}
 
-		If (Version > Version_Number){
+		If (Version "" != Version_Number){
 			If (_SuppressMsgBox != 1 and _SuppressMsgBox != 3){
 				MsgBox,0x4,Unumanus Update!,Hey look, I updated %Script_Name%!`nChangelog: http://roadcrosser.xyz/Unumanus/changelog`nCurrent version: %Version_Number%`nNew version: %Version%`n`nYou should, like, download it now.
 
