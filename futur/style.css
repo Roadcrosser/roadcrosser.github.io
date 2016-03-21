@@ -19,3 +19,8 @@ div {
 	font-family: 'Roboto', sans-serif;
 	font-size: 375%;
 }
+
+iframe {
+	pointer-events: none;
+	opacity: 0;
+}
