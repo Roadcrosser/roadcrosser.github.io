@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.2.0
+Unumanus v.2.1
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -252,14 +252,14 @@ return
 :*:<rip>::
 if FUN >= 1
 {
-rip = https://www.youtube.com/watch?v=GJbjKX3MFnc|https://tcrf.net/images/8/80/Undertale_Mus_kingdescription.ogg|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Studio`%20Pixel/Gameover.mp3|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Danny`%20Baranowsky/Game`%20Over.mp3|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Yann`%20van`%20der`%20Cruyssen/Game`%20Over.mp3|http://i.imgur.com/Iu436XX.png|http://i.imgur.com/Jy1n3v9.png|http://i.imgur.com/F34dyIW.png|http://i.imgur.com/31RzSh6.png|http://i.imgur.com/tPy9tHW.gif|http://i.imgur.com/nXmydCU.png|https://www.youtube.com/watch?v=RSrrniGr-ac|https://i.imgur.com/KxB69lc.gif|http://roadcrosser.xyz/clap.mp3|http://i.imgur.com/y3rMXjr.png|https://www.youtube.com/watch?v=4vSNnVVBdIg
+rip = https://www.youtube.com/watch?v=GJbjKX3MFnc|https://tcrf.net/images/8/80/Undertale_Mus_kingdescription.ogg|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Studio`%20Pixel/Gameover.mp3|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Danny`%20Baranowsky/Game`%20Over.mp3|http://roadcrosser.xyz/`%7B`%7B`%7B`%7B`%7B`%7D`%7D`%7D`%7D`%7D/Yann`%20van`%20der`%20Cruyssen/Game`%20Over.mp3|http://i.imgur.com/Iu436XX.png|http://i.imgur.com/Jy1n3v9.png|http://i.imgur.com/F34dyIW.png|http://i.imgur.com/31RzSh6.png|http://i.imgur.com/tPy9tHW.gif|http://i.imgur.com/nXmydCU.png|https://www.youtube.com/watch?v=RSrrniGr-ac|https://i.imgur.com/KxB69lc.gif|http://roadcrosser.xyz/clap.mp3|http://i.imgur.com/y3rMXjr.png|https://www.youtube.com/watch?v=4vSNnVVBdIg|http://i.imgur.com/7FpLZE0.png|https://www.youtube.com/watch?v=t1-5KxXz8zw|011100100110100101110000|726970|http://i.imgur.com/600QcFT.png|http://i.imgur.com/sq6neSB.png|http://i.imgur.com/ZKFN1Hj.png|rip|.-. .. .--.
 
 StringSplit riparray, rip, |
 Random, Randnum, 1, % riparray0
 rip := riparray%Randnum%
 Send %rip%
 }
-reload
+return
 
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
 
@@ -315,7 +315,7 @@ Return
 ;Texty stuff for text
 :?0:teh::the
 :?0:adn::and
-::@@::@gmail
+::@@::@gmail.com
 
 :*:<tokyo>::
 if FUN >= 1
@@ -887,7 +887,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "2.0"
+	, Version_Number := "2.1"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
