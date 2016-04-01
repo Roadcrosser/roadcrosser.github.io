@@ -1,0 +1,28 @@
+*{
+   margin:0;
+   padding:0;
+}
+
+#aaa{
+  font-size: 100%;
+  font-family: 'Dosis', sans-serif;
+  margin-left:auto;
+	margin-right:auto;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-moz-transform: translateY(50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+  display: flex;
+  text-align:justify;
+  left: 25%;
+  right: 25%;
+  width: 40%;
+}
