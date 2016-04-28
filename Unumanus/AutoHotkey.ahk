@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.2.2.2.1
+Unumanus v.2.2.2.2
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -78,13 +78,13 @@ if AutoUpdate = 1
 Check_ForUpdate()
 }
 
-if FUN > 3
+if FUN > 4
 {
 if FUN = 66
 {
 MsgBox Why would you set your fun value that high? It's not like Gaster's gonna come out or anything.
 }
-IniWrite, 3, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, FUN
+IniWrite, 4, %A_MyDocuments%\UnumanusConfig.ini, Script Functions, FUN
 }
 
 ;—————————————————————————————————————————————————————————————————————————————————————————————————
@@ -369,6 +369,13 @@ return
 if FUN >= 3
 {
   SendEvent {Backspace}{Backspace}{Backspace}{U+0136}{U+049E}{U+04A0}
+}
+return
+
+:*?0b0:42:: ; **42**
+if FUN >= 4
+{
+  SendEvent {Backspace}{Backspace}**42**
 }
 return
 
@@ -907,7 +914,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "2.2.2.1"
+	, Version_Number := "2.2.2.2"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
