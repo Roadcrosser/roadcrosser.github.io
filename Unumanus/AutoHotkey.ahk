@@ -5,7 +5,7 @@
 ██║   ██║██║╚██╗██║██║   ██║██║╚██╔╝██║██╔══██║██║╚██╗██║██║   ██║╚════██║
 ╚██████╔╝██║ ╚████║╚██████╔╝██║ ╚═╝ ██║██║  ██║██║ ╚████║╚██████╔╝███████║
  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
-Unumanus v.2.2.2
+Unumanus v.2.2.2.1
 
 Note: If you see a big garble of characters above, you might want to consider ignoring Step 2 and going to http://roadcrosser.xyz/Unumanus to get this file instead.
       While using this version is also fine, it'd just look worse.
@@ -118,7 +118,7 @@ if Instr(Heats1, "~") > 0
 
 if OrgnRNG = 1
 {
-Orng1 = bogosort~|Bootleg Michaelangestar Jackson~|Stargarine~|nancy~|j{#}rew{!}3d9Sb~|Orange Quartz~|Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|orbit+|Onigiri|Oran Jester|Oran-jee|dubmo|mango|Matt Groerange|oj|tangerine|oranot|norbert|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
+Orng1 = Oranuelstaranda~|bogosort~|Bootleg Michaelangestar Jackson~|Stargarine~|nancy~|j{#}rew{!}3d9Sb~|Orange Quartz~|Roborangecop~|Star Orangefly~|Starangebucks~|Storangebucks~|Not Rodea~|Orangulus Rift~|John Jacob Orangeheimer Schmidt~|Georangeo Starmani~|orangudan~|orangutan~|orngasdlfjsdghj~|apple+|orbit+|Onigiri|Oran Jester|Oran-jee|dubmo|mango|Matt Groerange|oj|tangerine|oranot|norbert|oreana|oriana|orancle|ronage|blorenge|egnao|oringe|obinge|orbinge|orbin|oragn|orange|orgate|norgate|ogre|ogle|ronaeg|organ|oroongay|oingy boingy|egnaro|oarng|oingo boingo|orngear|ngroae|egroan|doorhinge|norgerge|ornge|ornage|orgne|organe|ograne|ongere|rangeo|oerange|oran berry|oregano|orenge|oregon|oregona|oranga|orgene|oronge|ereonge|rngeoa|rnoarg|orngea|rongea|ornga|oregangeo|organge|daniel-range|ordan|orgean|orgaen|orgn|red-yellow|yellow-red
 Orng2 = juicestain|stem|spear|shed|nerd|clod|star|stare|stair|shtar|stra|strar|strer|sta|staro|stairs|star| star|starstar| starstar|ster|stror|stah|steh|sror|sar|score|sert|ASSERT|scrim|sploot|sweat|suit|stress|sort|spit|ASSET|swood|stan|juice|puff|-chan|-san|-kun|-sama|-sensei
 Orng3 = 1|10|11|12|13|14|15|16|17|18|19|one|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen
 StringSplit Orngarray1, Orng1, |
@@ -666,7 +666,7 @@ SendEvent {U+200B}
 }
 return
 
-+Space:: ; ​
+^+Space:: ; ​
 {
 SendEvent {U+200B}
 }
@@ -907,7 +907,7 @@ Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunctio
 {
 
 	Static Script_Name := "Unumanus"
-	, Version_Number := "2.2.2"
+	, Version_Number := "2.2.2.1"
 	, Update_URL := "http://roadcrosser.xyz/Unumanus/Version.ini"
 	, Retry_Count := 3
 
