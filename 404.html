@@ -1,14 +1,263 @@
 <html>
-<head>
-	<link rel="icon" type="image/ico" href="http://roadcrosser.xyz/404.ico">
-	<link rel="stylesheet" type="text/css" href="http://roadcrosser.xyz/404.css">
-	<title>404</title>
-</head>
-<body>
-<div id="parent">
-<div id="child">
-<center>* But nobody came.</center>
-</div></div>
-<div style="margin-left:auto;"><img src="http://roadcrosser.xyz/Flowey4.gif"></div>
-</body>
+	<head>
+		<style>
+			@font-face {
+				font-family: "Segoe UI";
+				src: url("segoeui.woff") format("woff"),
+				url("segoeui.ttf") format("truetype");
+				font-weight: normal;
+				font-style: normal;
+				}
+			body {
+				background: url('404background.png') no-repeat fixed;
+				-webkit-background-position: center center;
+				-moz-background-position: center center;
+				-o-background-position: center center;
+				background-position: center center;
+				background-color: #000;
+				overflow: hidden;
+			}
+			.dialog-box {
+				width:300px;
+				height:150px;
+				font-family: Segoe UI, Sans-Serif;
+				font-size: 10pt;
+				background-color:white;
+				border: 1px solid rgb(99, 180, 251);
+				-webkit-box-shadow: 0 0 15px gray;
+				-moz-box-shadow: 0 0 15px gray;
+				box-shadow: 0 0 15px gray;
+				position:absolute;
+				width:200px;
+				height:100px;
+				margin-top:-51px;
+				margin-left:-101px;
+				z-index:9999;
+				color:#222;
+				visibility:hidden;
+				opacity:0;
+				cursor:default;
+				text-decoration: none;
+			}
+			.dialog-box .dialog-title {
+				height: 30px;
+				width: 100%;
+				margin: 0;
+				font-size: 10pt;
+				padding-left: 8px;
+				padding-right: 8px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+			.dialog-box .dialog-content {
+				padding:1em;
+				position:absolute;
+				top:3em;
+				bottom:3em;
+				padding-left: 25px;
+				width: 100%;
+			}
+			.dialog-box .dialog-action {
+				position:absolute;
+				right:0;
+				bottom:0;
+				left:0;
+				height: 25px;
+				padding: 15px;
+				text-align:right;
+				background-color:#f0f0f0;
+			}
+			.dialog-box .dialog-action .btn {
+				text-decoration:none;
+				text-align:center;
+				color:inherit;
+				background-color:#e1e1e1;
+				border:1px solid #adadad;
+				float: right;
+				line-height:1.5em;
+				width: 85px;
+				height: 22px;
+				display: block;
+				cursor:default;
+				-moz-transition: background-color .2s, color .2s;
+				-webkit-transition: background-color .2s, color .2s;
+				transition: background-color .2s, color .2s;
+			}
+			.dialog-box .dialog-close {
+				border:none;
+				outline:none;
+				background:none;
+				font-style:normal;
+				font-size:110%;
+				font-weight: normal;
+				line-height:2em;
+				color:#222;
+				text-decoration:none;
+				position:absolute;
+				top:0;
+				right:0;
+				float: right;
+				width: 31px;
+				height: 29px;
+				margin: 0;
+				text-align: center;
+				cursor:default;
+				-moz-transition: background-color .2s, color .2s;
+				-webkit-transition: background-color .2s, color .2s;
+				transition: background-color .2s, color .2s;
+			}
+			.dialog-box .dialog-close:hover{
+				color:white;
+				background-color: #e81123;
+			}
+			.dialog-box .dialog-close:active{
+				color:white;
+				background-color: #f1707a;
+			}
+			.dialog-box .dialog-action .btn:hover {
+				border-color:#0078d7;
+				background-color:#e5f1fb;
+			}
+			.dialog-box .dialog-action .btn:active {
+				border-color:#005499;
+				background-color:#cce4f7;
+			}
+			img {
+				float:left;
+				padding-right:10px;
+				padding-top: 3px;
+				}
+			#text {
+				overflow: hidden;
+			}
+		</style>
+		<link rel="icon" type="image/ico" href="http://roadcrosser.xyz/404.ico">
+		<title>404</title>
+	</head>
+
+	<body>
+	</body>
+
+	<script>
+
+	(function(a, b) {
+
+		var uniqueId = new Date().getTime();
+
+		(function() { // Create the dialog box markup
+			var div = b.createElement('div'),
+				ovr = b.createElement('div');
+				div.className = 'dialog-box';
+				div.id = 'dialog-box-' + uniqueId;
+				div.innerHTML = '<h3 class="dialog-title">&nbsp;</h3><a href="javascript:;" class="dialog-minmax" title="Minimize"></a><a href="javascript:;" class="dialog-close" title="Close">&#x2715;</a><div class="dialog-content">&nbsp;</div><div class="dialog-action"></div>';
+				ovr.className = 'dialog-box-overlay';
+			b.body.appendChild(div);
+			b.body.appendChild(ovr);
+		})();
+
+		var maximize = false,
+			dialog = b.getElementById('dialog-box-' + uniqueId), // The HTML of dialog box
+			dialog_title = dialog.children[0],
+			dialog_minmax = dialog.children[1],
+			dialog_close = dialog.children[2],
+			dialog_content = dialog.children[3],
+			dialog_action = dialog.children[4],
+			dialog_overlay = dialog.nextSibling;
+
+		a.setDialog = function(set, config) {
+
+			var selected = null, // Object of the element to be moved
+				x_pos = 0,
+				y_pos = 0, // Stores x & y coordinates of the mouse pointer
+				x_elem = 0,
+				y_elem = 0, // Stores top, left values (edge) of the element
+				defaults = {
+					title: dialog_title.innerHTML,
+					content: dialog_content.innerHTML,
+					width: 225,
+					height: 190,
+					top: false,
+					left: false,
+					buttons: {
+						"OK": function() {
+							setDialog('close');
+						}
+					},
+					specialClass: "",
+					fixed: true,
+					overlay: false
+				}; // Default options...
+
+			for (var i in config) { defaults[i] = (typeof(config[i])) ? config[i] : defaults[i]; }
+
+			// Will be called when user starts dragging an element
+			function _drag_init(elem) {
+				selected = elem; // Store the object of the element which needs to be moved
+				x_elem = x_pos - selected.offsetLeft;
+				y_elem = y_pos - selected.offsetTop;
+			}
+
+			// Will be called when user dragging an element
+			function _move_elem(e) {
+				x_pos = b.all ? a.event.clientX : e.pageX;
+				y_pos = b.all ? a.event.clientY : e.pageY;
+				if (selected !== null) {
+					selected.style.left = !defaults.left ? ((x_pos - x_elem) + selected.offsetWidth/2) + 'px' : ((x_pos - x_elem) - defaults.left) + 'px';
+					selected.style.top = !defaults.top ? ((y_pos - y_elem) + selected.offsetHeight/2) + 'px' : ((y_pos - y_elem) - defaults.top) + 'px';
+				}
+			}
+
+			// Destroy the object when we are done
+			function _destroy() {
+				selected = null;
+			}
+
+			dialog.className =  "dialog-box " + (defaults.fixed ? 'fixed-dialog-box ' : '') + defaults.specialClass;
+			dialog.style.visibility = (set == "open") ? "visible" : "hidden";
+			dialog.style.opacity = (set == "open") ? 1 : 0;
+			dialog.style.width = defaults.width + 'px';
+			dialog.style.height = defaults.height + 'px';
+			dialog.style.top = (!defaults.top) ? "50%" : '0px';
+			dialog.style.left = (!defaults.left) ? "50%" : '0px';
+			dialog.style.marginTop = (!defaults.top) ? '-' + defaults.height/2 + 'px' : defaults.top + 'px';
+			dialog.style.marginLeft = (!defaults.left) ? '-' + defaults.width/2 + 'px' : defaults.left + 'px';
+			dialog_title.innerHTML = defaults.title;
+			dialog_content.innerHTML = defaults.content;
+			dialog_action.innerHTML = "";
+			dialog_overlay.style.display = (set == "open" && defaults.overlay) ? "block" : "none";
+
+			if (defaults.buttons) {
+				for (var j in defaults.buttons) {
+					var btn = b.createElement('a');
+						btn.className = 'btn';
+						btn.href = 'javascript:;';
+						btn.innerHTML = j;
+						btn.onclick = defaults.buttons[j];
+					dialog_action.appendChild(btn);
+				}
+			} else {
+				dialog_action.innerHTML = '&nbsp;';
+			}
+
+			// Bind the draggable function here...
+			dialog_title.onmousedown = function() {
+				_drag_init(this.parentNode);
+				return false;
+			};
+
+			dialog_close.onclick = function() {
+				setDialog("close", {content:""});
+			};
+
+			b.onmousemove = _move_elem;
+			b.onmouseup = _destroy;
+
+			maximize = (set == "open") ? true : false;
+
+		};
+
+	})(window, document);
+
+	javascript:setDialog('open', {title: '', content: '<img src="error.png"><div id="text">FATAL ERROR:<br>SAVIOR NOT FOUND.<br>SHUTTING DOWN.</div>'})
+	</script>
 </html>
